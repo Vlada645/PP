@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ECECEC;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+}
+
+main {
+    margin-top: 2pc;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    max-width: 94%;
+    min-width: 94%;
+
+    border-radius: 20px;
+
+}
+
+.breadcrumbs {
+    font-size: 0.9rem;
+    display: flex;
+    align-items:flex-start;
+    gap: auto;
+}
+
+.breadcrumbs ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.breadcrumbs li:not(:last-child):after {
+    content: "/";
+    margin: 0px 8px 0px 8px;
+}
+
+#career {
+    background-color: white;
+    margin-top: 20px;
+    gap: 20px;
+    padding: 2%;
+}
+
+#career h1{
+    font-size: 3.5rem;
+}
+
+#career ol {
+    position: relative;
+    left: 15px;
+}
+
+#vacancies {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+
+}
+
+.boxVacancies {
+    background-color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 calc(30%);
+
+    height: 160px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+#vacancies .boxVacancies:last-child {
+    max-width: 33.1%;
+    margin-right: auto;
+}
+
+.boxVacancies p {
+    background-color: #28285E;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 40px;
+    width: fit-content;
+    padding: 5px;
+}
+
+.boxVacancies h2 {
+    font-size: 1.3rem;
+}
+
+
+@media (max-width: 1200px) {
+    .boxVacancies {
+        flex: 1 1 calc(80% - 5px);
+    }
+    #vacancies .boxVacancies:last-child {
+        flex: 1 1 calc(80% - 5px);
+        max-width: none;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 900px) {
+    .boxVacancies {
+        flex: 1 1 calc(80% - 5px);
+    }
+    #vacancies .boxVacancies:last-child {
+        flex: 1 1 calc(100% - 5px);
+        max-width: none;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .boxVacancies {
+        flex: 1 1 100%;
+    }
+    #vacancies .boxVacancies:last-child {
+        max-width: none;
+        margin-right: 0px;
+    }
+}
