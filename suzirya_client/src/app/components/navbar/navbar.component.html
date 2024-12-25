@@ -1,0 +1,35 @@
+<nav class="nav" *ngFor="let item of [currentText]">
+    <div class="nav__content" [ngClass]="{'hidden': isMenuHidden, 'visible': !isMenuHidden}">
+        <a class="nav__logo" routerLink="/"></a>
+        <a class="nav__link" routerLink="/" routerLinkActive="nav__link--active" [routerLinkActiveOptions]="{ exact: true }">{{item.home}}</a>
+        <a class="nav__link" routerLink="partners" routerLinkActive="nav__link--active">{{item.partners}}</a>
+        <a class="nav__link" routerLink="projects" routerLinkActive="nav__link--active">{{item.projects}}</a>
+        <a class="nav__link" routerLink="news" routerLinkActive="nav__link--active">{{item.news}}</a>
+        <a class="nav__link" routerLink="contacts" routerLinkActive="nav__link--active">{{item.contacts}}</a>
+        <div class="nav__social">
+            <div class="nav__social--top">
+                <a class="nav__button" href="#">{{item.buttonText}}</a>
+                <p class="nav__language" (click)="toggleLanguage()"> 
+                    {{ currentLanguage }} 
+                    <span [class.active]="isArrowActive" class="nav__arrow--down"></span>
+                </p>
+            </div>
+            <div class="nav__social--bottom">
+                <div class="nav__social--bottom">
+                    <a class="nav__item nav__item--facebook" href="#"></a>
+                    <a class="nav__item nav__item--instagram" href="#"></a>
+                    <a class="nav__item nav__item--telegram" href="#"></a>
+                    <a class="nav__item nav__item--viber" href="#"></a>
+                </div>
+                <a class="nav__icon" routerLink="login" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="nav__togler" (click)="toggleMenu()" [ngClass]="{'open': !isMenuHidden}">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+    

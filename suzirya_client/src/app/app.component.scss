@@ -1,0 +1,15 @@
+@import 'styles/extends';
+
+* {
+    margin: 0;
+    padding: 0px;
+    display: block;
+    font-family: $font-family-regular;
+    
+}
+
+.container {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}

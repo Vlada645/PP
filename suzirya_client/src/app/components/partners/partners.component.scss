@@ -1,0 +1,52 @@
+@import '../../styles/_extends.scss';
+
+.partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+
+    padding: 33px 37px;
+    font-family: $font-family-regular;
+    letter-spacing: 0.08em;
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 930px;
+        max-height: 218px;
+        min-width: 70vw;
+        min-height: 30vh;
+        padding: 38px 59px;
+        background-color: $second-bg-color;
+        border-radius: 36px;
+
+        .partners__logo {
+            align-self: center;
+            width: 163px;
+            height: 141px;
+            background-color: $bg-button;
+            border-radius: 51px;
+        }
+    }
+    .partners__items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        width: 76vw;
+        .partners__item {
+            min-width: 139px;
+            height: 111px;
+            flex-basis: 16%;
+            border-radius: 50px;
+            background-color: $second-bg-color;
+        }
+    }
+
+
+}

@@ -1,0 +1,130 @@
+<main>
+    <h1>Admin Panel</h1>
+    <h2>Add Charitable Gatherings</h2>
+    <h3>Add new</h3>
+    <form #f="ngForm" (ngSubmit)="addCharitableGathering(f)">
+      <input type="text" name="title" ngModel placeholder="Title" required>
+      <input type="file" name="img" (change)="onFileSelected($event)" required>
+      <input type="number" name="sum_at_this_moment" ngModel placeholder="Collected Sum" required>
+      <input type="number" name="main_sum" ngModel placeholder="Main Sum" required>
+      <button type="submit" [disabled]="!f.valid">Add</button>
+    </form>
+  
+    <h2>Charitable Gatherings</h2>
+    <div class="project__item" *ngFor="let gathering of charitableGathering; let i = index">
+        <img class="project__img" [src]="gathering.img" alt="Image of {{ gathering.title }}">
+        <h2>{{ gathering.title }}</h2>
+        <p>Collected: {{ gathering.sum_at_this_moment }} / {{ gathering.main_sum }}</p>
+        <button (click)="removeGatheringIn(i)">Remove</button>
+        
+        <!-- Toggle visibility or update inline -->
+        <div class="update">
+          <h3>Update</h3>
+            <form #form="ngForm" (ngSubmit)="updateGathering(i, form)">
+                <input type="text" name="title" ngModel placeholder="New Title">
+                <input type="file" name="img" (change)="onFileSelected($event)">
+                <input type="number" name="sum_at_this_moment" ngModel placeholder="New Collected Sum">
+                <input type="number" name="main_sum" ngModel placeholder="New Main Sum">
+                <button type="submit">Update</button>
+              </form>
+              
+        </div>
+      </div>
+
+
+      <div class="humanitarianDeparture">
+        <h2>Humanitarian Departure</h2>
+        <form #formadd="ngForm" (ngSubmit)="addHumanitarianDeparture(formadd)">
+          <input type="text" name="title" ngModel placeholder="Title" required>
+          <input type="file" name="img" (change)="onFileSelected($event)" required>
+          <input type="number" name="sum_at_this_moment" ngModel placeholder="Collected Sum" required>
+          <input type="number" name="main_sum" ngModel placeholder="Main Sum" required>
+          <button type="submit" [disabled]="!f.valid">Add</button>
+        </form>
+      </div>
+        <div *ngFor="let humDep of humanitariadep; let i = index">
+          <h2>Humanitarian Departure</h2>
+          <div class="project__item" >
+            <img class="project__img" [src]="humDep.videoURL" alt="Image of {{ humDep.title }}">
+            <h2>{{ humDep.title }}</h2>
+            <p>{{humDep.description}}</p>
+            <p>{{humDep.date}}</p>
+            <button (click)="deleteHumanitarianDeparture(i)">Remove</button>
+          </div>
+            <!-- Toggle visibility or update inline -->
+            <div class="update" *ngFor="let humDep of humanitariadep; let id = index">
+                <form #form="ngForm" (ngSubmit)="updateHumanitarianDeparture(id, form)">
+                    <input type="text" name="title" ngModel placeholder="New Title">
+                    <input type="file" name="videoURL" (change)="onFileSelected($event)">
+                    <input type="number" name="descriptio" ngModel placeholder="descriptio">
+                    <input type="number" name="date" ngModel placeholder="date">
+                    <button type="submit">Update</button>
+                  </form>
+      </div>
+        </div>
+
+        <div>
+          <h2>News</h2>
+          <h3>Create</h3>
+          <form #formadd="ngForm" (ngSubmit)="addNews(formadd)">
+            <input type="text" name="title" ngModel placeholder="New Title">
+            <input type="file" name="img" (change)="onFileSelected($event)">
+            <input type="number" name="description" ngModel placeholder="description">
+            <input type="number" name="date" ngModel placeholder="date">
+            <button type="submit" [disabled]="!f.valid">Add</button>
+          </form>
+        </div>
+          <div *ngFor="let news of news; let i = index">
+            <h2>News</h2>
+            <div class="project__item" >
+              <img class="project__img" [src]="news.img" alt="Image of {{ news.title }}">
+              <h2>{{ news.title }}</h2>
+              <p>{{news.description}}</p>
+              <p>{{news.date}}</p>
+              <button (click)="deleteNews(i)">Remove</button>
+            </div>
+              <!-- Toggle visibility or update inline -->
+              <div class="update">
+                <h3>Update</h3>
+                  <form #form="ngForm" (ngSubmit)="updateNews(i, form)">
+                      <input type="text" name="title" ngModel placeholder="New Title">
+                      <input type="file" name="img" (change)="onFileSelected($event)">
+                      <input type="number" name="description" ngModel placeholder="description">
+                      <input type="number" name="date" ngModel placeholder="date">
+                      <button type="submit">Update</button>
+                    </form>
+        </div>
+          </div>
+
+        <div class="thanks">
+          <h2>Thanks</h2>
+          <form #formadd="ngForm" (ngSubmit)="addThanks(formadd)">
+            <input type="file" name="img" (change)="onFileSelected($event)" required>
+            <input type="text" name="name" ngModel placeholder="Name" required>
+            <input type="message" name="message" ngModel placeholder="Text" required>
+            <button type="submit" [disabled]="!f.valid">Add</button>
+          </form>
+
+          <div *ngFor="let thank of thanks; let i =index">
+            <h2>Thanks</h2>
+            <div class="project__item" >
+              <img class="project__img" [src]="thank.img" alt="Image of {{ thank.name }}">
+              <h2>{{ thank.name }}</h2>
+              <p>{{thank.message}}</p>
+              <button (click)="deleteThanks(i)">Remove</button>
+            </div>
+              <!-- Toggle visibility or update inline -->
+              <div class="update">
+                  <form #form="ngForm" (ngSubmit)="updateThanks(i, form)">
+
+                      <input type="file" name="img" (change)="onFileSelected($event)">
+                      <input type="text" name="name" ngModel placeholder="Name">
+                      <input type="text" name="description" ngModel placeholder="name">
+                      <input type="text" name="date" ngModel placeholder="message">
+                      <button type="submit">Update</button>
+                    </form>
+        </div>
+          </div>
+        </div>
+  </main>
+  

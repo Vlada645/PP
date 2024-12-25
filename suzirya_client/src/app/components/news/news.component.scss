@@ -1,0 +1,63 @@
+@import '../../styles/extends';
+
+.events {
+    padding: 33px 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    font-family: $font-family-regular;
+    letter-spacing: 0.08em;
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        max-width: 643px;
+    }
+
+
+    &__content {
+        &--top {
+        display: flex;
+        width: 80vw;
+        gap: 72px;
+
+        .events__inner {
+            display: flex;
+            flex-direction: column;
+            gap: 37px;
+        }
+        .events__img {
+            max-width: 30vw;
+            min-width: 303px;
+            height: 282px;
+            border-radius: 30px;
+            background-color: $shadow;
+        }
+    }
+
+    &--reverse {
+        flex-direction: row-reverse;
+    }
+    &--bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+        .events__items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 101px;
+    
+            .events__title--medium {
+                text-align: center;
+            }
+        
+
+        }
+    }
+}
+}

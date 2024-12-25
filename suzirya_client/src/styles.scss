@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../src/app/styles/extends';
+* {
+    margin: 0;
+    padding: 0px;
+}
+
+html {
+  overflow-x: hidden;
+  scrollbar-color: #78B7FA #e2ee9e;
+}

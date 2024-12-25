@@ -1,0 +1,38 @@
+@import '../../styles/extends';
+
+.projects {
+    padding: 33px 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    font-family: $font-family-regular;
+    letter-spacing: 0.08em;
+    .projects__content {
+        display: flex;
+        gap: 59px;
+        max-width: 984px;
+        min-width: 70vw;
+        max-height: 427px;
+        min-height: 50vh;
+        
+        .projects__img {
+            background-color: $second-bg-color;
+            width: 353px;
+            height: 281px;
+            border-radius: 30px;
+        }
+        .projects__title {
+            padding-bottom: 23px;
+            padding-left:  30px;
+        }
+    }
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 49px;
+        width: 70vw;
+        padding-bottom: 35px;
+    }
+}

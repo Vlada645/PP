@@ -1,0 +1,21 @@
+<main class="login">
+    <form #f="ngForm" role="form" name="loginForm">
+        <label for="__email">Your email</label>
+        <input id="__email"  name="email" type="email" #email="ngModel" [(ngModel)]="_email" title="jfjfj" required autocomplete="false">
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['required']">The Email is required</div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['email']">
+            This is not the correct Email Format
+        </div>
+        <div class="alert alert-danger" *ngIf="email.touched && email.errors?.['invalid']">
+            The email format is invalid
+        </div>
+        <label for="password">Your password</label>
+        <input id="password" name="password" type="password" #password="ngModel" [(ngModel)]="_password" title="" minlength="8" required>
+        
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['required']">The Password is required</div>
+        <div class="alert alert-danger" *ngIf="password.touched && password.errors?.['minlength']">The password should be at least 8 characters</div>
+        
+        <input type="submit" value="Ввійти" [disabled]="f.invalid" (click)="login(f)">
+    </form>
+
+</main>

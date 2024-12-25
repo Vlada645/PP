@@ -1,0 +1,24 @@
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: 'Ubuntu Mono-Regular';
+    src: url('/assets/Ubuntu_Mono/UbuntuMono-Regular.ttf');
+}
+@font-face {
+    font-family: 'Ubuntu Mono-Bold';
+    src: url('/assets/Ubuntu_Mono/UbuntuMono-Bold.ttf');
+}
+@font-face {
+    font-family: 'Ubuntu Mono-BoldItalic';
+    src: url('/assets/Ubuntu_Mono/UbuntuMono-BoldItalic.ttf');
+}
+
+$font-family-regular: "Ubunt Mono-Regular", sans-serif;
+$font-family-Bold: "Ubunt Mono-Bold", sans-serif;
+$font-family-BoldItalic: "Ubunt Mono-BoldItalic", sans-serif;
+$color-nav-footer: #5D61E9;
+$bg-button: #EAE964;
+$second-bg-color: #F3FFB0;
+$gradiat: #E8FF68;
+$content-bg-color: #F4F4F4;
+$shadow: #78b7fa5e;

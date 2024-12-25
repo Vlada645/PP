@@ -1,0 +1,17 @@
+@import '../../styles/extends';
+
+.events__item {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    max-width: 429px;
+    font-family: $font-family-regular;
+    letter-spacing: 0.08em;
+    .events__video {
+        width: 100%;
+        min-width: 429px;
+        height: 293px;
+        background-color: $shadow;
+        border-radius: 35px;
+    }
+}

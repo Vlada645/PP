@@ -1,0 +1,67 @@
+<!-- About Component HTML -->
+
+<main class="about">
+    <div class="about__content">
+        <h1 class="about__title">Благодійна організація «Національний Благодійний фонд «Сузір’я»</h1>
+        <p class="about__text">Сузір’я – це команда, що з перших днів війни об’єднує навколо себе людей, котрі безкоштовно допомагають військовим; 
+            людям, що змушені рятуватись  від війни; 
+             дітям, що залишилися сиротами. 
+             <br> Ми всі маємо роботу та сім’ї, та знаходимо час рятувати життя та наближати перемогу.</p>
+        <div class="about__payment">
+            <a class="about__button" href="#">підтримай донатом</a>
+            <p class="about__payment-types">платіжні види</p>
+        </div>
+    </div>
+
+    <div class="about__founder">
+        <h2 class="about__secondtitle">Фонд заснувал</h2>
+        <div class="about__item">
+            <span class="about__img"></span>
+            <p class="about__fullname">ПІБ</p>
+        </div>
+        <p class="about__text">
+            Ми зосереджуємося на допомозі ЗСУ здебільшого на передовій, отримуючи щоденні запити від військових, власноруч доставляєм допомогу по всій  лінії бойових зіткнень на території України та переселенцям, евакуйованим з окупованих територій, прифронтових міст, що в один день лишились всього, та потребують допомоги від елементарних побутових речей до даху над головою. Лікарні, шпиталі, дитячі будинки, малозабезпечені, інваліди та інші незахищені верстви населення отримують посильну допомогу. <br> <br>
+            За час існування фонду ми здійснили 28 поїздок ( Донецька , Запорізька, Миколаївська , Херсонська, Харківська , Дніпропетровська області); <br> <br>
+            - відвезли тонни необхідних  речей на передову: генератори та «буржуйки», повербанки та акумулятори, обігрівачі та миючі засоби, діжки для води та лікарські засоби, авторезина та автозапчастини, спальні мішкі, газові балони, продукти харчування та напої, засоби гігієни, одяг, постільну білизну, ковдри, антисептики, побутову техніку, інструменти ( сокири, молотки, лопати...), консервацію, ліки, маскувальні сітки, каністри, плівку, піддупники, «кікімори», окопні свічки та багато іншого; <br> <br>
+            - навідували діток у дитячих будинках; <br> <br>
+            - опікувалися біженцями з окупованих територій та зон бойових дій. <br> <br>
+            - надавали допомогу шпиталям та лікарням <br> <br> 
+            </p>
+        
+    </div>
+
+    <div class="about__comand" (focus)="startAutoScroll()">
+        <h2 class="about__secondtitle">Наша команда</h2>
+        <div class="about__content--comand">
+          <div class="about__items">
+            <div 
+              class="about__item" 
+              *ngFor="let item of visibleCards; let i = index" 
+              [class.active]="i === 0">
+              <img [src]="item.photo" class="about__img"/>
+              <p class="about__fullname">{{ item.fullName }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="about__slider-indicator">
+          <span 
+            class="about__dot" 
+            *ngFor="let dot of dots; let i = index" 
+            [class.active]="i === activeIndex / 3"
+            (click)="onDotClick(i)">
+          </span>
+        </div>
+      </div>
+    
+
+    <div class="about__thanks">
+        <h2 class="about__secondtitle">Подяки</h2>
+        <div class="about__items">
+            <div class="about__item" *ngFor="let item of thanks">
+                <p class="about__img">{{item.photo}}</p>
+                <h4 class="about__fullname">{{item.fullName}}</h4>
+                <p class="about__text">- {{item.text}}</p>
+            </div>
+        </div>
+    </div>
+</main>

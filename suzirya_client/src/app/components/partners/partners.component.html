@@ -1,0 +1,14 @@
+<div class="partners">
+    <h1 class="partnerss__title">Наші партнери</h1>
+
+    <div class="partners__content">
+        <p class="partners__text">Text text text text</p>
+        <span class="partners__logo"></span>
+    </div>
+
+    <div class="partners__items">
+        <div class="partners__item" *ngFor="let item of partners">
+            <img [src]="item.img" alt="">
+        </div>
+    </div>
+</div>

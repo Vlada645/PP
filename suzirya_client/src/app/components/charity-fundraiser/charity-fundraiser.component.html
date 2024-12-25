@@ -1,0 +1,6 @@
+<div class="project__item" *ngFor="let item of charitable_gathering">
+    <img class="project__img" [src]="item.img" alt="">
+    <h4>{{item.title}}</h4>
+    <p>Сума збору на цей момент: {{item.sum_at_this_moment}}</p>
+    <p>Необхідна сума: {{item.main_sum}}</p>
+</div>
